@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../res/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../res/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../res/css/site.css">
+    <link rel="stylesheet" href="../res/css/site-animate.css">
+    <link rel="stylesheet" href="../res/css/site-media.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="~/css/blog-pace.css" />
+    <script data-pace-options='{ "ajax": false ,"eventLag": false}' src="../res/js/pace.min.js"></script>
+    <script src="../res/lib/layui/layui.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .layui-hide-xs {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <nav class="blog-nav layui-header">
+        <div class="layui-container">
+            <!-- 登陆后 -->
+            <!-- <span class="blog-user">
+                <a href="">
+                    <img src="#" alt="" title="" />
+                </a>
+            </span> -->
+            <!-- 未登陆 -->
+            <a href="javacript:;" class="blog-user">
+                <i class="fa fa-qq"></i>
+            </a>
+            <a class="blog-logo" href="index.html">不落阁</a>
+            <ul class="blog-nav-list" lay-filter="nav">
+                <li class="layui-nav-item">
+                    <a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+                </li>
+                <li class="layui-nav-item layui-this">
+                    <a href="articlelist.html"><i class="fa fa-book fa-fw"></i>&nbsp;学海无涯</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="timeline.html"><i class="fa fa-snowflake-o fa-fw"></i>&nbsp;点点滴滴</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="production.html"><i class="fa fa-th-large fa-fw"></i>&nbsp;个人作品</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="comment.html"><i class="fa fa-comments fa-fw"></i>&nbsp;留言交流</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                </li>
+            </ul>
+            <a class="blog-navicon" href="javascript:;">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- 主体 -->
+    <div class="blog-body">
+        <!-- 页面主体内容 -->
+        <div class="layui-container">
+            <blockquote class="layui-elem-quote sitemap shadow">
+                <i class="layui-icon"></i>
+                <span class="layui-breadcrumb" lay-separator=">" style="visibility: visible;">
+                    <a href="/">首页</a><span lay-separator="">&gt;</span>
+                    <a><cite>学海无涯</cite></a>
+                </span>
+            </blockquote>
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md8">
+                    <div class="left-box">
+                        <p class="left-box-title shadow"><i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i>全部文章
+                        </p>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article shadow clearfix">
+                            <div class="article-left">
+                                <img src="../res/images/cover/201708252044567037.jpg"
+                                    alt="Visual Studio Code（VS Code）设置为中文" layer-index="0">
+                            </div>
+                            <div class="article-right">
+                                <div class="article-title">
+                                    <a href="detail.html">Visual Studio Code（VS Code）设置为中文</a>
+                                </div>
+                                <div class="article-abstract">
+                                    本文介绍如何将Visual Studio Code设置为中文环境。
+                                </div>
+                                <div class="article-footer">
+                                    <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a
+                                            style="color:#009688" href="#">开发工具</a></span>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;2019-10-08</span>
+                                    <span class="article-viewinfo">4阅</span>
+                                    <span class="article-viewinfo">0评</span>
+                                    <span class="article-viewinfo">0赞</span>
+                                    <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs"
+                                        href="detail.html" title="阅读全文：Visual Studio Code（VS Code）设置为中文">阅读全文</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-pagebox">
+                        <div class="laypage-main">
+                            <span class="laypage-curr">1</span>
+                            <a href="#">2 </a>
+                            <a href="#">3 </a>
+                            <a href="#" class="laypage-next">下一页</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-row layui-col-space10">
+                        <div class="layui-col-sm6 layui-col-md12 layui-hide-xs layui-hide-sm">
+                            <div class="blog-search">
+                                <form class="layui-form" action="">
+                                    <div class="layui-form-item">
+                                        <div class="search-keywords  shadow">
+                                            <input type="text" name="keywords" lay-verify="required"
+                                                placeholder="输入关键词搜索" autocomplete="off" class="layui-input">
+                                        </div>
+                                        <div class="search-submit  shadow">
+                                            <a class="search-btn" lay-submit="formSearch" lay-filter="formSearch"><i
+                                                    class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6 layui-col-md12 padding0">
+                            <div class="article-category shadow">
+                                <div class="article-category-title">分类导航</div>
+                                <a href="#">.NET Core</a>
+                                <a href="#">Web前端</a>
+                                <a href="#">C#基础</a>
+                                <a href="#">杂文随笔</a>
+                                <a href="#">网站管理</a>
+                                <a href="#">开发工具</a>
+                                <a href="#">微信小程序</a>
+                                <a href="#">Xamarin</a>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6 layui-col-md12">
+                            <div class="blog-card">
+                                <div class="blog-card-title">
+                                    <span class="icon"><i class="layui-icon" aria-hidden="true"></i></span>
+                                    <span class="text">作者推荐</span>
+                                </div>
+                                <ul class="blog-card-ul">
+                                    <li>
+                                        <span class="layui-badge ">1</span><a href="detail.html"
+                                            title=".NET Core 3.0正式版发布">.NET Core 3.0正式版发布</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge ">2</span><a href="detail.html"
+                                            title="JS动画效果之妙用Animate.css">JS动画效果之妙用Animate.css</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge ">3</span><a href="detail.html"
+                                            title="使用ASP.NET Core SignalR搭建聊天室（本站聊天室）">使用ASP.NET Core
+                                            SignalR搭建聊天室（本站聊天室）</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">4</span><a href="detail.html"
+                                            title="小程序黑科技之获取手机号码、通讯地址、地理位置">小程序黑科技之获取手机号码、通讯地址、地理位置</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">5</span><a href="detail.html"
+                                            title="ASP.NET Core第三方认证之QQ登录">ASP.NET Core第三方认证之QQ登录</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6 layui-col-md12">
+                            <div class="blog-card shadow sr-rightmodule">
+                                <div class="blog-card-title">
+                                    <span class="icon"><i class="layui-icon" aria-hidden="true"></i></span>
+                                    <span class="text">随便看看</span>
+                                </div>
+                                <ul class="blog-card-ul">
+                                    <li>
+                                        <span class="layui-badge ">1</span><a href="detail.html"
+                                            title="Xamarin.Forms移动开发系列1：介绍和安装">Xamarin.Forms移动开发系列1：介绍和安装</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge ">2</span><a href="detail.html"
+                                            title="Visual Studio Code（VS Code）设置为中文">Visual Studio Code（VS
+                                            Code）设置为中文</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge ">3</span><a href="detail.html"
+                                            title="使用ASP.NET Core SignalR搭建聊天室（本站聊天室）">使用ASP.NET Core
+                                            SignalR搭建聊天室（本站聊天室）</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">4</span><a href="detail.html"
+                                            title="博客升级到.NET Core 3.0的变化和问题">博客升级到.NET Core 3.0的变化和问题</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">5</span><a href="detail.html"
+                                            title="JS动画效果之妙用Animate.css">JS动画效果之妙用Animate.css</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">6</span><a href="detail.html"
+                                            title="ASP.NET Core第三方认证之QQ登录">ASP.NET Core第三方认证之QQ登录</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">7</span><a href="detail.html"
+                                            title="Xamarin.Forms移动开发系列3：项目剖析">Xamarin.Forms移动开发系列3：项目剖析</a>
+                                    </li>
+                                    <li>
+                                        <span class="layui-badge layui-bg-blue">8</span><a href="detail.html"
+                                            title="后台可以管理文章了，接下来开始做博客前台。">后台可以管理文章了，接下来开始做博客前台。</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--右边悬浮 平板或手机设备显示-->
+                    <div class="category-toggle"><i class="fa fa-chevron-left"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <footer class="blog-footer">
+        <p><a href="javascript:layer.msg('正在制作')">文章归档</a><a href="javascript:layer.msg('正在制作')">网站地图</a><a href=""
+                target="_blank">联系作者</a><a href="javascript:layer.msg('正在制作')">小额赞赏</a></p>
+        <p><span>Powered by .NET Core 3.0</span><span>&copy;2017 - 2019</span><a
+                href="https://www.leo96.com">leo96.com</a><span>版权所有</span><a href="http://www.miibeian.gov.cn/"
+                target="_blank">蜀ICP备16029915号-4</a></p>
+    </footer>
+    <!-- 移动端侧边导航 -->
+    <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
+        <li class="layui-nav-item">
+            <a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+        </li>
+        <li class="layui-nav-item layui-this">
+            <a href="articlelist.html"><i class="fa fa-book fa-fw"></i>&nbsp;学海无涯</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="timeline.html"><i class="fa fa-snowflake-o fa-fw"></i>&nbsp;点点滴滴</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="production.html"><i class="fa fa-th-large fa-fw"></i>&nbsp;个人作品</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="comment.html"><i class="fa fa-comments fa-fw"></i>&nbsp;留言交流</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        </li>
+    </ul>
+    <!-- 侧边导航遮罩 -->
+    <div class="blog-mask animated layui-hide"></div>
+
+    <script src="https://cdn.bootcss.com/scrollReveal.js/3.3.6/scrollreveal.js"></script>
+    <script src="../res/js/site.js"></script>
+</body>
+
+</html>
