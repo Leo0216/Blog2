@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../res/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../res/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../res/css/site.css">
+    <link rel="stylesheet" href="../res/css/site-animate.css">
+    <link rel="stylesheet" href="../res/css/site-media.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="../res/css/blog-pace.css" />
+    <script data-pace-options='{ "ajax": false ,"eventLag": false}' src="../res/js/pace.min.js"></script>
+    <script src="../res/lib/layui/layui.js"></script>
+    <!-- 本页特有的css -->
+    <link rel="stylesheet" href="../res/css/article-detail.css">
+    <link rel="stylesheet" href="../res/css/wangEditor.css">
+    <link rel="stylesheet" href="../res/css/prettify.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <nav class="blog-nav layui-header">
+        <div class="layui-container">
+            <!-- 登陆后 -->
+            <!-- <span class="blog-user">
+                <a href="">
+                    <img src="#" alt="" title="" />
+                </a>
+            </span> -->
+            <!-- 未登陆 -->
+            <a href="javacript:;" class="blog-user">
+                <i class="fa fa-qq"></i>
+            </a>
+            <a class="blog-logo" href="index.html">不落阁</a>
+            <ul class="blog-nav-list" lay-filter="nav">
+                <li class="layui-nav-item layui-this">
+                    <a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="articlelist.html"><i class="fa fa-book fa-fw"></i>&nbsp;学海无涯</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="timeline.html"><i class="fa fa-snowflake-o fa-fw"></i>&nbsp;点点滴滴</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="production.html"><i class="fa fa-th-large fa-fw"></i>&nbsp;个人作品</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="comment.html"><i class="fa fa-comments fa-fw"></i>&nbsp;留言交流</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                </li>
+            </ul>
+            <a class="blog-navicon" href="javascript:;">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- 主体 -->
+    <div class="blog-body">
+        <!-- 页面主体内容 -->
+        <div class="layui-container">
+            <blockquote class="layui-elem-quote sitemap shadow">
+                <i class="layui-icon">&#xe715;</i>
+                <span class="layui-breadcrumb" lay-separator=">">
+                    <a href="index.html">首页</a>
+                    <a href="articlelist.html">学海无涯</a>
+                    <a><cite>EF Core进阶之加载关联数据</cite></a>
+                </span>
+            </blockquote>
+            <div class="layui-row layui-col-space15 clearfix">
+                <div class="layui-col-md8 left">
+                    <div data-fontsize="14" class="article-detail shadow">
+                        <div class="article-tool">
+                            <div style="float:left;">
+                                <button class="layui-btn layui-btn-primary layui-btn-xs"
+                                    title="发布日期">2019年09月27日</button>
+                                <div class="layui-btn-group">
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="浏览">
+                                        <i class="fa fa-eye fa-fw"></i><span style="margin-left:3px;">28</span>
+                                    </button>
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="评论">
+                                        <i class="fa fa-comments fa-fw"></i><span style="margin-left:3px;">0</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="tool-box">
+                                <div class="layui-btn-group">
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="静音">
+                                        <i class="fa fa-volume-up fa-fw"></i>
+                                    </button>
+                                </div>
+                                <div class="layui-btn-group layui-hide-xs">
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="字体缩小">
+                                        <i class="fa fa-minus fa-fw"></i>
+                                    </button>
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="字体还原">
+                                        <i class="fa fa-undo fa-fw"></i>
+                                    </button>
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="字体放大">
+                                        <i class="fa fa-plus fa-fw"></i>
+                                    </button>
+                                </div>
+                                <div class="layui-btn-group layui-hide-xs">
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="展开阅读">
+                                        <i class="fa fa-arrows-h fa-fw"></i>
+                                    </button>
+                                    <button class="layui-btn layui-btn-primary layui-btn-xs" title="全屏阅读">
+                                        <i class="fa fa-arrows-alt fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-detail-title">EF Core进阶之加载关联数据</div>
+                        <div class="article-detail-abstract">
+                            <span class="layui-badge">摘要</span>
+                            <span id="abstract">Entity Framework
+                                Core可以通过导航属性来加载相关联的数据，而加载方法又有三种，本文主要介绍三种加载方式的区别与各自的优劣势。</span>
+                        </div>
+                        <div class="article-detail-content w-e-text">
+                            <p><span style="font-size: x-large; font-weight: bold; color: rgb(0, 0, 0);">开发环境</span><br></p><p>ASP.NET Core 3.0 + Entity Framework 3.0</p><p><span style="font-weight: bold; font-size: x-large; color: rgb(0, 0, 0);">正文</span></p><p>Entity Framework Core 通过实体类的导航属性来加载相关数据。有三种常见的方式：</p><p><span style="font-weight: bold; color: rgb(0, 0, 0);">预先加载</span> - 将关联数据作为查询的一部分一起查询出来。</p><p><span style="color: rgb(0, 0, 0); font-weight: bold;">显示加载</span> - 查询主数据之后，再从数据库查询相关数据。</p><p><span style="font-weight: bold; color: rgb(0, 0, 0);">延迟加载</span> - 在访问导航属性的时候，再从数据库查询相关数据。</p><p><span style="font-weight: bold; font-size: x-large; color: rgb(0, 0, 0);">预先加载</span></p><p><span style="font-weight: bold; color: rgb(0, 0, 0);">预先加载</span>又叫贪婪加载，使用<span style="color: rgb(255, 0, 255);">Include</span>方法来指定需要查询的相关数据。如下所示：</p><pre class="prettyprint linenums"><code>using (var context = new BlogContext())
+                                {
+                                    var blogs = await context.Article.Where(s =&gt; s.Status == 1)
+                                        .Include(article =&gt; article.Remarks)    //加载文章评论
+                                            .ThenInclude(remark =&gt; remark.User)   //加载评论者
+                                        .Include(article =&gt; article.Remarks)
+                                            .ThenInclude(remark =&gt; remark.RemarkReplys)   //加载评论的回复
+                                                .ThenInclude(remarkReply =&gt; remarkReply.User)   //加载评论回复的回复者
+                                        .Include(article =&gt; article.Remarks)
+                                            .ThenInclude(remark =&gt; remark.RemarkReplys)
+                                                .ThenInclude(remarkReply =&gt; remarkReply.TargetUser) //加载评论回复目标人
+                                        .Include(article =&gt; article.ArticleMusics)  //加载文章音乐
+                                            .ThenInclude(articleMusic =&gt; articleMusic.Music)  //加载文章音乐对应的音乐
+                                        .FirstOrDefaultAsync(s =&gt; s.Id == id);
+                                }</code></pre><p><span style="white-space: pre-wrap;"><span style="color: rgb(255, 0, 255);">多关联</span>：可以使用多个<span style="color: rgb(255, 0, 255);">Include</span>加载多个关联数据。如上代码所述，加载了文章关联的评论和音乐。</span><br></p><p><span style="white-space: pre-wrap;"><span style="color: rgb(255, 0, 255);">多层级</span>：</span><span style="white-space: pre-wrap;">可以在Include后使用<span style="color: rgb(255, 0, 255);">ThenInclude</span>加载更深级别的关联数据（关联数据的关联数据）。</span><span style="white-space: pre-wrap;">如上代码所述</span><span style="white-space: pre-wrap;">，加载了评论关联的回复以及回复关联的回复人等。</span></p><p><span style="white-space: pre-wrap;"><span style="color: rgb(255, 0, 255);">合并查询</span>：可以看到，上述代码示例中使用了多次</span>Include(article =&gt; article.Remarks)，一般情况下，EF在生成SQL时合并相应的关联查询，所以不用担心查询冗余。</p><p>此外，EF还有一种<span style="color: rgb(255, 0, 255);">自动填充导航属性</span>的功能，如果当前数据上下文对象中已经加载过相关联的数据，即使不使用Include，导航属性也可能会被填充，如：</p><pre class="prettyprint linenums"><code>var articleMusic = await context.ArticleMusic
+                                    .Include(s=&gt;s.Music)
+                                    .FirstOrDefaultAsync(s =&gt; s.ArticleId == id);   //在Include之前已经加载过文章对应的音乐
+                                
+                                var article = await context.Article.Where(s =&gt; s.Status == 1)
+                                    //.Include(article =&gt; article.ArticleMusics)  //加载文章音乐
+                                    //    .ThenInclude(articleMusic =&gt; articleMusic.Music)  //加载文章音乐对应的音乐
+                                    .FirstOrDefaultAsync(s =&gt; s.Id == id); //即使注释掉，article对象的ArticleMusic以及ArticleMusic对象的Music属性仍然会被加载</code></pre><p><span style="color: rgb(0, 0, 0); font-weight: bold; font-size: x-large;">显式加载</span></p><p><span style="font-weight: bold; color: rgb(0, 0, 0);">显式加载</span>使用<span style="color: rgb(255, 0, 255);">Entry</span>方法来进行相关数据的加载。此方式在EF Core 1.1才能使用。</p><pre class="prettyprint linenums"><code>using (var context = new BlogContext())
+                                {
+                                    var article = await context.Article.Where(s =&gt; s.Status == 1)
+                                        .FirstOrDefaultAsync(s =&gt; s.Id == id);
+                                    //加载文章评论
+                                    context.Entry(article).Collection(article =&gt; article.Remarks).Load();
+                                }</code></pre><p>这种方式我个人不太常用，具体使用场景需要各位自己探索。</p><p><span style="font-weight: bold; font-size: x-large; color: rgb(0, 0, 0);">延迟加载</span></p><p><span style="font-weight: bold; color: rgb(0, 0, 0);">延迟加载</span>在读取数据时不会加载关联数据，在之后需要用到关联数据的时候会自动加载关联数据，是EF 6就已经有的功能，在EF Core 2.1中得到支持。要使用延迟加载功能，需要安装<span style="color: rgb(255, 0, 255);">Microsoft.EntityFrameworkCore.Proxies</span>包，并通过<span style="color: rgb(255, 0, 255);">UseLazyLoadingProxies</span>来启用，如：</p><pre class="prettyprint linenums"><code>optionsBuilder.UseSqlServer(connectionStr)
+                                    .UseLoggerFactory(MyLoggerFactory)
+                                    .UseLazyLoadingProxies(); //启用延迟加载</code></pre><p>然后EF会为所有可重写的导航属性（必须是<span style="color: rgb(255, 0, 255);">virtual关键字</span>）启用延迟加载，如：</p><pre class="prettyprint linenums"><code>#region 导航属性
+                                [ForeignKey("CategoryId")]
+                                public virtual ArticleCategory Category { get; set; }
+                                [ForeignKey("AttachmentId")]
+                                public virtual Attachment Attachment { get; set; }
+                                
+                                public virtual ICollection&lt;Remark&gt; Remarks { get; set; }
+                                public virtual ICollection&lt;ArticleMusic&gt; ArticleMusics { get; set; }
+                                #endregion</code></pre><p>使用：</p><pre class="prettyprint linenums"><code>var article = await context.Article.Where(s =&gt; s.Status == 1)
+                                        .FirstOrDefaultAsync(s =&gt; s.Id == id);
+                                foreach (var item in article.Remarks)
+                                {
+                                    Console.WriteLine(item.User.Name);
+                                }</code></pre><p>上述代码并未<span style="color: rgb(255, 0, 255);">预先加载</span>或者<span style="color: rgb(255, 0, 255);">显式加载</span>文章的评论，但是却可以照常获取到文章的评论数据，这就是<span style="color: rgb(255, 0, 255);">延迟加载的奥义</span>（在使用时自动加载）。</p><p><span style="font-weight: bold; font-size: x-large; color: rgb(0, 0, 0);">延迟加载和预先加载对比</span></p><p><span style="font-weight: bold; color: rgb(0, 0, 0);">预先加载</span>会在第一次查询数据的时候把需要的相关数据一起查询出来（通过一条SQL）。</p><p><span style="color: rgb(255, 0, 255);">优点：</span>一次查询，减少数据延迟访问。</p><p><span style="color: rgb(255, 0, 255);">缺点：</span>可能会把一些不需要用到的数据查询出来，造成查询效率低。</p><p><span style="color: rgb(0, 0, 0); font-weight: bold;">延迟加载</span>会在使用相关数据的时候再从数据库查询相关数据。</p><p><span style="color: rgb(255, 0, 255);">优点：</span>减少不必要的数据读取。</p><p><span style="color: rgb(255, 0, 255);">缺点：</span>会多次打开数据库，执行多条SQL，增加数据库负担。</p><p>两者并没有严格意义上的优劣，需要根据实际使用场景来进行选择。</p><p><br></p>
+                        </div>
+                    </div>
+                    <div class="article-component">
+                        <div class="component-box">
+                            <a href="javascript:;" class="praise" blog-event="praise"><i
+                                    class="fa fa-thumbs-up fa-fw"></i>点赞（<span id="praiseCnt">0</span>）</a>
+                            <a href="javascript:;" class="reword" blog-event="reword">赏</a>
+                            <a href="javascript:;" class="share" blog-event="share"><i
+                                    class="fa fa-share-alt fa-fw"></i>分享（<span id="shareCnt">0</span>）</a>
+                        </div>
+                    </div>
+                    <div class="blog-card blog-card-padding shadow">
+                        <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
+                            <legend>来说两句吧</legend>
+                            <div class="layui-field-box">
+                                <form class="layui-form blog-editor" action="">
+                                    <div class="layui-form-item">
+                                        <textarea name="EditorContent" lay-verify="content" id="remarkEditor"
+                                            placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
+                                        <!-- 禁止评论 -->
+                                        <!-- <div style="border:1px solid #f2f2f2;" class="emptybox">
+                                            <p><i style="font-size:50px;color:#5fb878" class="layui-icon">&#x1007;</i>
+                                            </p>
+                                            <p>该文章已禁止评论</p>
+                                        </div> -->
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <button class="layui-btn" lay-submit="formRemark"
+                                            lay-filter="formRemark">提交评论</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>
+                        <div class="blog-card-title">最新评论</div>
+                        <ul class="blog-comment">
+                            <li>
+                                <div class="comment-parent">
+                                    <a name="remark-@item.Id"></a>
+                                    <img src="../res/images/Leo.jpg" alt="Leo" />
+                                    <div class="info">
+                                        <span class="username">Leo</span>
+                                    </div>
+                                    <div class="content">评论扯淡呢</div>
+                                    <p class="info info-footer"><span class="time">2019-10-08 17：39：22</span><a href="javascript:;" class="btn-reply" data-targetname="Leo">回复</a></p>
+                                </div>
+                                <hr />
+                                <div class="comment-child">
+                                    <a name="reply-@reply.Id"></a>
+                                    <img src="../res/images/Leo.jpg" alt="麻花疼" />
+                                    <div class="info">
+                                        <span class="username">麻花疼</span>
+                                        <span style="padding-right:0;margin-left:-5px;">回复</span>
+                                        <span class="username">Leo</span>
+                                        <span>第一条回复</span>
+                                    </div>
+                                    <p class="info"><span class="time">2019-10-08 17：39：22</span><a href="javascript:;" class="btn-reply" data-targetname="麻花疼">回复</a></p>
+                                </div>
+                                <div class="comment-child">
+                                    <a name="reply-@reply.Id"></a>
+                                    <img src="../res/images/Leo.jpg" alt="麻花疼" />
+                                    <div class="info">
+                                        <span class="username">麻花疼</span>
+                                        <span style="padding-right:0;margin-left:-5px;">回复</span>
+                                        <span class="username">Leo</span>
+                                        <span>第二条回复</span>
+                                    </div>
+                                    <p class="info"><span class="time">2019-10-08 17：39：22</span><a href="javascript:;" class="btn-reply" data-targetname="麻花疼">回复</a></p>
+                                </div>
+                                <!-- 回复编辑器 -->
+                                <div class="replycontainer layui-hide">
+                                    <form class="layui-form" action="">
+                                        <div class="layui-form-item"><textarea name="replyContent" lay-verify="replyContent" placeholder="请输入回复内容" class="layui-textarea" style="min-height:80px;"></textarea>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <button class="layui-btn layui-btn-xs" lay-submit="formReply" lay-filter="formReply">提交</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="comment-parent">
+                                    <a name="remark-@item.Id"></a>
+                                    <img src="../res/images/Leo.jpg" alt="Leo" />
+                                    <div class="info">
+                                        <span class="username">Leo</span>
+                                    </div>
+                                    <div class="content">评论扯淡呢</div>
+                                    <p class="info info-footer"><span class="time">2019-10-08 17：39：22</span><a href="javascript:;" class="btn-reply" data-targetname="Leo">回复</a></p>
+                                </div>
+                                <!-- 回复编辑器 -->
+                                <div class="replycontainer layui-hide">
+                                    <form class="layui-form" action="">
+                                        <div class="layui-form-item"><textarea name="replyContent" lay-verify="replyContent" placeholder="请输入回复内容" class="layui-textarea" style="min-height:80px;"></textarea>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <button class="layui-btn layui-btn-xs" lay-submit="formReply" lay-filter="formReply">提交</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- 没有评论 -->
+                        <!-- <div class="emptybox">
+                            <p><i style="font-size:50px;color:#5fb878" class="layui-icon"></i></p>
+                            <p>暂无评论，大侠不妨来一发？</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="layui-col-md4 right"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <footer class="blog-footer">
+        <p><a href="javascript:layer.msg('正在制作')">文章归档</a><a href="javascript:layer.msg('正在制作')">网站地图</a><a href=""
+                target="_blank">联系作者</a><a href="javascript:layer.msg('正在制作')">小额赞赏</a></p>
+        <p><span>Powered by .NET Core 3.0</span><span>&copy;2017 - 2019</span><a
+                href="https://www.leo96.com">leo96.com</a><span>版权所有</span><a href="http://www.miibeian.gov.cn/"
+                target="_blank">蜀ICP备16029915号-4</a></p>
+    </footer>
+    <!-- 移动端侧边导航 -->
+    <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
+        <li class="layui-nav-item layui-this">
+            <a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="articlelist.html"><i class="fa fa-book fa-fw"></i>&nbsp;学海无涯</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="timeline.html"><i class="fa fa-snowflake-o fa-fw"></i>&nbsp;点点滴滴</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="production.html"><i class="fa fa-th-large fa-fw"></i>&nbsp;个人作品</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="comment.html"><i class="fa fa-comments fa-fw"></i>&nbsp;留言交流</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        </li>
+    </ul>
+    <!-- 侧边导航遮罩 -->
+    <div class="blog-mask animated layui-hide"></div>
+
+    <script src="https://cdn.bootcss.com/scrollReveal.js/3.3.6/scrollreveal.js"></script>
+    <script src="../res/js/site.js"></script>
+    <!-- 本页特有js -->
+    <script src="../res/js/prettify.js"></script>
+    <script type="text/javascript">
+        var shareIndex, $;
+    
+        prettyPrint(); //渲染文章中的代码
+    
+        layui.use(['layer', 'form'], function () {
+            $ = layui.$;
+            var form = layui.form
+                , device = layui.device();
+    
+    
+            //文章顶部工具栏按钮点击事件
+            $('.tool-box button').on('click', function () {
+                var title = $(this).attr('title');
+                switch (title) {
+                    case '全屏阅读':
+                        var content = $('.article-detail').prop("outerHTML");
+                        layer.open({
+                            title: false,
+                            type: 1,
+                            content: content,
+                            closeBtn: 0,
+                            scrollbar: false,
+                            area: ['100vw', '100vh'],
+                            success: function (layero, index) {
+                                $(layero).find('.article-tool').html('<div class="tool-box"><div class="layui-btn-group"><button class="layui-btn layui-btn-primary layui-btn-xs" title="关闭全屏"><i class="fa fa-compress fa-fw"></i></button></div></div>');
+                                $(layero).find('.article-tool button').on('click', function () {
+                                    layer.close(index);
+                                });
+                            }
+                        });
+                        break;
+                    case '展开阅读':
+                        $('.right').hide();
+                        $('.left').css({
+                            'width': '100%'
+                        });
+                        $(this).attr('title', '收缩阅读');
+                        $(this).html('<i class="fa fa-compress fa-fw"></i>');
+                        break;
+                    case '收缩阅读':
+                        $('.right').show();
+                        $('.left').css('width', '');
+                        $(this).attr('title', '展开阅读');
+                        $(this).html('<i class="fa fa-arrows-h fa-fw"></i>');
+                        break;
+                    case '字体缩小':
+                        var fontsize = Number($('.article-detail').data('fontsize'));
+                        fontsize = fontsize - 1;
+                        if (fontsize < 12) fontsize = 12;
+                        $('.article-detail').data('fontsize', fontsize);
+                        $('.article-detail-abstract,.article-detail-content').css('font-size', fontsize + 'px');
+                        break;
+                    case '字体还原':
+                        $('.article-detail').data('fontsize', 14);
+                        $('.article-detail-abstract,.article-detail-content').css('font-size', '');
+                        break;
+                    case '字体放大':
+                        var fontsize = Number($('.article-detail').data('fontsize'));
+                        fontsize = fontsize + 1;
+                        if (fontsize > 20) fontsize = 20;
+                        $('.article-detail').data('fontsize', fontsize);
+                        $('.article-detail-abstract,.article-detail-content').css('font-size', fontsize + 'px');
+                        break;
+                    case '静音':
+                        $(this).attr('title', '开启');
+                        $(this).html('<i class="fa fa-volume-off fa-fw"></i>');
+                        ap.volume(0, false);
+                        break;
+                    case '开启':
+                        $(this).attr('title', '静音');
+                        $(this).html('<i class="fa fa-volume-up fa-fw"></i>');
+                        ap.volume(0.5, false);
+                        break;
+                    default:
+                }
+            });
+    
+            //回复按钮点击事件
+            $('.btn-reply').on('click', function () {
+                var targetId = $(this).data('targetid')
+                    , targetName = $(this).data('targetname')
+                    , $container = $(this).parent('p').parent().siblings('.replycontainer');
+                if ($(this).text() == '回复') {
+                    $container.find('textarea').attr('placeholder', '回复【' + targetName + '】');
+                    $container.removeClass('layui-hide');
+                    $container.find('input[name="targetUserId"]').val(targetId);
+                    $(this).parents('.blog-comment li').find('.btn-reply').text('回复');
+                    $(this).text('收起');
+                } else {
+                    $container.addClass('layui-hide');
+                    $container.find('input[name="targetUserId"]').val(0);
+                    $(this).text('回复');
+                }
+            });
+    
+            //监听留言回复提交
+            form.on('submit(formReply)', function (data) {
+                if ($(data.elem).hasClass('layui-btn-disabled')) {
+                    return false;
+                }
+                var index = layer.load(1);
+                $.ajax({
+                    type: 'post',
+                    url: '/api/article/reply',
+                    data: data.field,
+                    success: function (res) {
+                        layer.close(index);
+                        if (res.code === 1) {
+                            layer.msg(res.msg, { icon: 6 });
+                            setTimeout(function () {
+                                location.reload(true);
+                            }, 500);
+                        } else {
+                            if (res.msg != undefined) {
+                                layer.msg(res.msg, { icon: 5 });
+                            } else {
+                                layer.msg('程序异常，请重试或联系作者', { icon: 5 });
+                            }
+                        }
+                    },
+                    error: function (e) {
+                        layer.close(index);
+                        layer.msg("请求异常", { icon: 2 });
+                    }
+                });
+                return false;
+            });
+            var events = {
+                //分享
+                share: function () {
+                    layer.msg('使用的百度分享组件');
+                }
+    
+                //点赞
+                , praise: function () {
+                    var localdata = layui.data('blog')
+                        , articleId = $('#hidArticleId').val()
+                        , self = this;
+                    if (localdata['praise' + articleId]) {
+                        layer.tips('你已点过赞了，若收获颇大，可打赏作者！^_^', self, { tips: 1, time: 2000 });
+                        return;
+                    }
+                    //服务器点赞数加一
+                    //存储是否点赞该文
+                    layui.data('blog', {
+                        key: 'praise' + $('#hidArticleId').val()
+                        , value: true
+                    });
+                    //点赞+1
+                    var cnt = Number($('#praiseCnt').text()) + 1;
+                    $('#praiseCnt').text(cnt);
+                    layer.tips('Thank you ^_^', self, { tips: 1, time: 2000 });
+                }
+    
+                //打赏
+                , reword: function () {
+                    layer.tab({
+                        area: ['330px', '373px'],
+                        shade: 0.6,
+                        tab: [{
+                            title: '微信',
+                            content: '<img style="width:330px;height:330px;" src="../res/images/wx_reward.png" />'
+                        }, {
+                            title: '支付宝',
+                            content: '<img style="width:330px;height:330px;" src="../res/images/ali_reward.jpg" />'
+                        }]
+                    });
+    
+                }
+            };
+    
+            $('*[blog-event]').on('click', function () {
+                var eventName = $(this).attr('blog-event');
+                events[eventName] && events[eventName].call(this);
+            });
+    
+            $('*[blog-event="reword"]').on('mouseover', function () {
+                layer.tips('一元足以感动我 ^_^', this, { tips: 1, time: 2000 });
+            });
+        });
+    </script>
+</body>
+
+</html>
