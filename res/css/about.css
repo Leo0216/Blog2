@@ -1,4 +1,10 @@
-﻿.blog-about-container {
+﻿/* 关于本站页面样式表
+ * @Author: Leo 
+ * @Date: 2019-10-09 11:30:08 
+ * @Last Modified by: Leo
+ * @Last Modified time: 2019-10-09 11:30:42
+ */
+.blog-about-container {
     background-color: #fff;
     border: 1px solid #ddd;
     border-top: none;

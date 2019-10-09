@@ -1,4 +1,10 @@
-﻿.article-record-title {
+﻿/* 文章归档 样式表
+ * @Author: Leo 
+ * @Date: 2019-10-09 11:32:15 
+ * @Last Modified by:   Leo 
+ * @Last Modified time: 2019-10-09 11:32:15 
+ */
+.article-record-title {
     position: fixed;
 }
 

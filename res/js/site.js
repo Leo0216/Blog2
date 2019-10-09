@@ -1,4 +1,10 @@
-﻿if (window.layui) {
+﻿/* 全局js
+ * @Author: Leo 
+ * @Date: 2019-10-09 11:36:17 
+ * @Last Modified by:   Leo 
+ * @Last Modified time: 2019-10-09 11:36:17 
+ */
+if (window.layui) {
     layui.use(['element', 'layer', 'form', 'util', 'flow', 'layedit'], function () {
         var element = layui.element
             , form = layui.form

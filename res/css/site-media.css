@@ -1,4 +1,11 @@
-﻿/* 超小屏幕（手机，小于 768px） */
+﻿/* 媒体查询
+ * @Author: Leo 
+ * @Date: 2019-10-09 11:33:13 
+ * @Last Modified by:   Leo 
+ * @Last Modified time: 2019-10-09 11:33:13 
+ */
+
+/* 超小屏幕（手机，小于 768px） */
 @media(max-width:767px) {
     .shadow {
         -moz-box-shadow: none;

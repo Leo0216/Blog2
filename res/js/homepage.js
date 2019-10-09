@@ -1,4 +1,10 @@
-﻿layui.config({
+﻿/* 首页js
+ * @Author: Leo 
+ * @Date: 2019-10-09 11:35:45 
+ * @Last Modified by:   Leo 
+ * @Last Modified time: 2019-10-09 11:35:45 
+ */
+layui.config({
     base: '../res/js/'
 }).use('unslider', function () {
     var $ = window.jQuery = layui.jquery

@@ -1,4 +1,10 @@
-﻿/*动画定义*/
+﻿/* 动画定义
+ * @Author: Leo 
+ * @Date: 2019-10-09 11:32:57 
+ * @Last Modified by:   Leo 
+ * @Last Modified time: 2019-10-09 11:32:57 
+ */
+ 
 /*左侧导航In动画*/
 @keyframes leftIn {
     from {
