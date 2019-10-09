@@ -26,5 +26,5 @@ wangEditor编辑器样式表
 [Font-Awesome字体图标](http://www.fontawesome.com.cn/ "Font-Awesome字体图标")
 
 
-## 演示地址
+## 使用案例
 [不落阁 - 一个.NET程序员的个人博客](https://www.leo96.com "不落阁 - 一个.NET程序员的个人博客")
